@@ -188,20 +188,17 @@ strong{
   align-items: center
 }
 
-.info-get label,input,button{
-  padding: 0 10px;
+.info-get label,button{
+  padding: 0 20px;
   margin: 5px;
 }
 
-select{
+.info-get select{
   font-family: 'Roboto', sans-serif;
-}
-
-.info-get input{
   min-width:247px;
-  border-radius: 4%;
   border: 1px solid rgb(190, 203, 255);
 }
+
 .info-get button{
   background-color: lightgreen;
   font-weight: bold;
@@ -312,6 +309,12 @@ footer p {
 
  .info-get{
    flex-direction: column;
+ }
+
+ .info-get label,select{
+   display: block;
+   width: 55vh;
+   margin: 0 auto;
  }
 
  .info-get button{

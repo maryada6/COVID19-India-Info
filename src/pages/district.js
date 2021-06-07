@@ -2,11 +2,14 @@ import React, { useState, useEffect ,useRef} from "react";
 import { dataReturnDistrictOfState } from "../covid";
 import Loading from "../loading"
 import DistrictInfo from "../components/district"
+import Dropdown from "../components/dropdown"
+
 const District = () => {
 
 const state = useRef(null);
 const district = useRef(null);
 const [objStates,setObjStates]=useState([])
+const [objDistricts,setObjDistricts]=useState([])
 const [loading,setLoading]=useState(false)
  
 
@@ -14,21 +17,50 @@ const [loading,setLoading]=useState(false)
 const handleSubmit = event => {
     event.preventDefault();
     if (state || district) {
-      fetchdata()
-
+      fetchdata();
     } 
     
   };
 
+  const handleDistrict = async () => {
+    try {
+      // console.log(district.current.value);
+      setLoading(true)
+        dataReturnDistrictOfState(state.current.value,"").then(function (result) {
+            if (result !== {}) {
+                setObjDistricts(result);
+                setObjStates(result);
+                setLoading(false);
+              }
+      });
+      
+}
+
+  catch (error) {
+    setLoading(false);
+    console.log(error);
+  }
+
+  }
+
   const fetchdata = async () => {
     try {
+      // console.log(district.current.value);
       setLoading(true)
-        dataReturnDistrictOfState(state.current.value,district.current.value).then(function (result) {
+      if(district.current===null)
+        dataReturnDistrictOfState(state.current.value,"").then(function (result) {
             if (result !== {}) {
                 setObjStates(result);
                 setLoading(false);
               }
       });
+      else
+      dataReturnDistrictOfState(state.current.value,district.current.value).then(function (result) {
+        if (result !== {}) {
+            setObjStates(result);
+            setLoading(false);
+          }
+  });
       
     } 
     
@@ -42,8 +74,10 @@ const handleSubmit = event => {
  
 
 useEffect(()=>{
-    fetchdata()
+    fetchdata();
+    handleDistrict();
 },[])
+
 
   return (
     <div className="page">
@@ -51,7 +85,7 @@ useEffect(()=>{
       <div className="info-get">
       <label htmlFor="state">Select a State:</label>
 
-      <select name="state" id="selectElementID" defaultValue={'Tamil Nadu'} ref={state}>
+      <select name="state" id="selectElementID" defaultValue={'Tamil Nadu'} onChange={()=>handleDistrict()} ref={state}>
         <option value="Andaman and Nicobar Islands">
           Andaman and Nicobar Islands
         </option>
@@ -93,8 +127,9 @@ useEffect(()=>{
         <option value="Uttarakhand">Uttarakhand</option>
         <option value="West Bengal">West Bengal</option>
       </select>
-      <label htmlFor="district">Enter district:</label>
-      <input id="district" type="text" ref={district}/>
+      <Dropdown obj={objDistricts} ref={district} />
+      {/* <label htmlFor="district">Enter district:</label>
+      <input id="district" type="text" ref={district}/> */}
       <button type="submit" >Submit</button>
       </div>
       </form>
