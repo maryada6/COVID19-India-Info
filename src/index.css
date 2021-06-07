@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@300&family=tStin+Ultra+Condensed&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  /* overflow: hidden; */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul{list-style-position: inside;}
+
+header {
+  position: sticky;
+  background-color: #2c498d;
+  z-index: 10;
+  top: 0;
+}
+
+
+nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  list-style: none;
+}
+
+
+@keyframes load {
+  0% {
+    width: 0px;
+  }
+  50% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.progress {
+  height: 3px;
+  display: block;
+  background-color: red;
+  animation: load 1s ease-in  1;
+}
+
+
+
+header ul li ,.error-btn{
+  color: white;
+  padding: 0px 5px;
+  margin: 5px 20px;
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  list-style-type: none;
+  text-align: center;
+}
+
+.error-container{
+  height: 90vh;
+}
+
+.error-btn{
+  color: black;
+}
+
+
+
+.page{
+  background-color:white;
+  min-height: 90vh;
+  overflow-x: hidden;
+}
+
+
+.container1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.c-block {
+  font-family: 'Roboto', sans-serif;
+  width: 32%;
+  min-height: 35vh;
+  margin-right: 1%;
+  background: #e7daf4;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #C0AADA;
+}
+
+strong{
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.c-block span{
+  margin: 10px;
+  display: -webkit-box;
+}
+
+.c-view {
+ 
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 90px;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-weight: 700;
+}
+
+.c-title {
+  text-transform: uppercase;
+  box-sizing: border-box;
+  
+}
+
+.yday-vcount {
+  margin: 20px auto;
+  background: #EEE1FD;
+  border: 1px solid #6724C7;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.imp-info{
+  background-color: #faf2e5;
+}
+
+.total-info{
+  background-color: #EDFAFF;
+}
+
+.heading{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-weight: 900;
+  font-size: 25px;
+  margin: 20px;
+}
+
+.state-container,.district-container{
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.state-info,.district-info{
+  border: 1px solid black ;
+  width:30%;
+  padding: 5px;
+  margin:5px;
+  border-radius: 2%;
+  text-align: center;
+  font-weight: 500;
+  
+}
+
+.state-name,.district-name{
+  overflow-wrap: break-word;
+  font-weight:700;
+}
+
+.info-get{
+  font-weight:bold;
+  background-color: rgb(190, 203, 255);
+  min-height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.info-get label,input,button{
+  padding: 0 10px;
+  margin: 5px;
+}
+
+select{
+  font-family: 'Roboto', sans-serif;
+}
+
+.info-get input{
+  min-width:247px;
+  border-radius: 4%;
+  border: 1px solid rgb(190, 203, 255);
+}
+.info-get button{
+  background-color: lightgreen;
+  font-weight: bold;
+  text-align: center;
+  padding:2px 10px;
+  border: 1px solid green;
+  border-radius: 2%;
+}
+
+.covid-info{
+  text-align: justify;
+  margin: 5px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.about-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#C0AADA;
+}
+
+.about-title{
+  background-color: rgb(190, 203, 255);
+  padding:5px;
+  width: 100%;
+  margin: 0px 0 20px 0;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.covid-details{
+  width:95%;
+  margin: 20px 0;
+  background-color: #faf2e5;
+}
+
+.covidimg{
+  width:80%;
+  height:50vh;
+  background-color: #faf2e5;
+  object-fit: contain;
+}
+
+
+
+.contact-links {
+  margin: 20px;
+  width: 20%;
+  display: flex;
+  justify-content:space-around;
+  background-color:lightgreen;
+  border: 1px solid black;
+  border-radius: 3%;
+}
+
+.contact-links a {
+  color: var(--clr-white);
+  margin: 5px;
+}
+
+.contact-icon {
+  font-size: 3vw;
+}
+
+
+footer {
+  background-color: grey;
+  position: sticky;
+  z-index: 1;
+  bottom: 0;
+}
+footer p {
+  text-align: center;
+  font-family: "roboto", sans-serif;
+  color: black;
+}
+
+@media only screen and (max-width: 600px){
+  header {
+    background-color:#2c498d;
+  }
+
+  header nav ul li {
+    font-size: 12px;
+    padding: 2px;
+    margin: 3px 5px;
+  }
+
+ .top{
+   flex-direction: column;
+ }
+
+ .c-block{
+   width: 80%;
+   margin: 10px;
+ }
+
+ .district-info {
+   width:43%;
+   margin:2px;
+ }
+
+ .info-get{
+   flex-direction: column;
+ }
+
+ .info-get button{
+  min-width:267px;
+ }
+
+ .state-info{
+   width:80%;
+ }
+ .about-title{
+   font-size: 16px
+ }
+
+}
