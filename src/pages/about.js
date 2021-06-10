@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="page">
     <div className="about-container">
-      <div className="about-title">Covid - 19 India Information Page</div>
+      <div className="about-title">Covid - 19 India Information Page(Unofficial Page)</div>
       <img className="covidimg" src={window.location.origin + '/covid.jpg'}  alt="" />
       <div className="covid-details">
       <details>
