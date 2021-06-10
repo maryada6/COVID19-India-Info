@@ -80,10 +80,25 @@ header ul li ,.error-btn{
 
 .page{
   background-color:white;
-  min-height: 90vh;
+  min-height: 89vh;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
+.daily-info-container
+{
+   background-color: rgb(188, 255, 187);
+   display: flex;
+   font-family: 'Roboto', sans-serif;
+   font-weight: bold;
+   padding:7px 5px;
+   justify-content: center;
+   overflow: hidden;
+}
+.daily-info{
+  margin: 10px;
+  padding: 3px;
+}
 
 .container1{
   display: flex;
@@ -272,9 +287,11 @@ strong{
 
 footer {
   background-color: grey;
-  position: sticky;
-  z-index: 1;
+  position: fixed;
+  left: 0;
   bottom: 0;
+  width: 100%;
+  z-index: 1;
 }
 footer p {
   text-align: center;
@@ -326,6 +343,14 @@ footer p {
  }
  .about-title{
    font-size: 16px
+ }
+
+ .daily-info-container{
+   flex-direction: column;
+   align-items: center;
+   width:80%;
+   border-radius: 3%;
+   margin:10px auto;
  }
 
 }

@@ -82,7 +82,7 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-// totalTested("5/6/2021")
+// totalTested("5/6/2021")  //used
 // .then(function(result) {
 // 	   console.log(result) 
 // 	})
@@ -91,7 +91,7 @@ function numberWithCommas(x) {
 // })
 
 
-// stateNameReturn('West Bengal')
+// stateNameReturn('West Bengal') //used
 // .then(function(result) {
 //    console.log(result) 
 // })
@@ -100,7 +100,7 @@ function numberWithCommas(x) {
 // })
 
 
-// dataReturnDistrictOfState("Tamil Nadu","madurai")
+// dataReturnDistrictOfState("Tamil Nadu","madurai") //used
 // .then(function(result) {
 // 	console.log(result) 
 //  })
@@ -116,7 +116,7 @@ function numberWithCommas(x) {
 // 	return {};
 // })
 
-// caseDateReturn('2021-05-04')
+// caseDateReturn('2021-05-04') 
 // .then(function(result) {
 // 	console.log(result) 
 //  })

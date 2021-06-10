@@ -16,10 +16,10 @@ const DistrictInfo = (obj) => {
   { Object.keys(obj.obj).map((item, i) => (
       <div className="district-info"  style={{backgroundColor:getRandomColor()}} key={i}>
         <div className="district-name">{item}</div>
-        <div className="info">Active cases: {numberWithCommas(obj.obj[item].active)} </div>
-        <div className="info">Confirmed cases: {numberWithCommas(obj.obj[item].confirmed)}</div>
-        <div className="info">Deceased: {numberWithCommas(obj.obj[item].deceased)}</div>
-        <div className="info">Recovered cases:{numberWithCommas(obj.obj[item].recovered)}</div>
+        <div className="info">Active cases: {numberWithCommas(obj.obj[item].active) || 'N/A'} </div>
+        <div className="info">Confirmed cases: {numberWithCommas(obj.obj[item].confirmed) || 'N/A'}</div>
+        <div className="info">Deceased: {numberWithCommas(obj.obj[item].deceased) || 'N/A'}</div>
+        <div className="info">Recovered cases: {numberWithCommas(obj.obj[item].recovered) || 'N/A'}</div>
       </div>))}
    
       </div>);

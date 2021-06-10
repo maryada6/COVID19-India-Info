@@ -1,12 +1,28 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../loading";
-import { totalTested, stateNameReturn, numberWithCommas } from "../covid";
+import {
+  totalTested,
+  stateNameReturn,
+  numberWithCommas,
+  caseDateReturn,
+} from "../covid";
 import Container from "../components/container";
 import StateInfo from "../components/stateinfo";
+import Dailyinfo from "../components/dailyInfo";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+  const [casedaily,setCaseADaily] = useState({
+    dailyconfirmed: "",
+    dailydeceased: "",
+    dailyrecovered: "",
+    date: "",
+    dateymd: "",
+    totalconfirmed: "",
+    totaldeceased: "",
+    totalrecovered: ""
+    });
   const [stateData, setStateData] = useState([]);
   const [totaldata1, settotaldata1] = useState({
     dailyrtpcrsamplescollectedicmrapplication: "",
@@ -89,6 +105,7 @@ const Home = () => {
 
   const fetchtotaldata1 = async () => {
     setLoading(true);
+
     try {
       totalTested().then(function (result) {
         settotaldata1(
@@ -104,6 +121,14 @@ const Home = () => {
         if (result !== {}) {
           setStateData(result);
           // console.log(stateData);
+        }
+      });
+
+
+      caseDateReturn().then(function (result) {
+        if (result !== {}) {
+          setCaseADaily(result[Object.keys(result)[Object.keys(result).length - 1]])
+          // console.log( result[Object.keys(result)[Object.keys(result).length - 1]]);
         }
       });
 
@@ -140,12 +165,13 @@ const Home = () => {
           <div className="container1 top">
             <Container
               mssg1="Vaccination Dose"
-              num1={numberWithCommas(
+              num1={ (totaldata1.totaldosesadministered -
+                totaldata2.totaldosesadministered > 0) ? numberWithCommas(
                 totaldata1.totaldosesadministered -
-                  totaldata2.totaldosesadministered
-              )}
+                  totaldata2.totaldosesadministered ): 'N/A'
+              }
               mssg2="Vaccination Doses Day Before"
-              num2={numberWithCommas(totaldata1.totaldosesadministered)}
+              num2={numberWithCommas(totaldata1.totaldosesadministered) || 'N/A'}
               mssg3="Total Vaccination Doses"
             />
 
@@ -153,27 +179,26 @@ const Home = () => {
               <div className="c-view">
                 <span>
                   <strong>
-                    {numberWithCommas(
-                      totaldata1.dailyrtpcrsamplescollectedicmrapplication
-                    )}
+                    { numberWithCommas(
+                      totaldata1.dailyrtpcrsamplescollectedicmrapplication)||"N/A"}
                   </strong>{" "}
                   Daily RT-PCR samples collected
                 </span>
                 <span>
                   <strong>
-                    {numberWithCommas(totaldata1.firstdoseadministered)}
+                    {numberWithCommas(totaldata1.firstdoseadministered) || 'N/A'}
                   </strong>
                   First dose administered
                 </span>
                 <span>
                   <strong>
-                    {numberWithCommas(totaldata1.seconddoseadministered)}
+                    {numberWithCommas(totaldata1.seconddoseadministered) || 'N/A'}
                   </strong>
                   Second dose administered
                 </span>
                 <span>
                   <strong>
-                    {numberWithCommas(totaldata1.totalindividualsvaccinated)}
+                    {numberWithCommas(totaldata1.totalindividualsvaccinated) || 'N/A'}
                   </strong>
                   Total individuals vaccinated
                 </span>
@@ -205,25 +230,25 @@ const Home = () => {
                 </div>
               ))}
           </div>
-          
-        
-        <p className="heading">COVID-19 Statewise Status:</p>
 
-        <div className="container1 state-container">
-          {stateData.map((state, index) => (
-            <StateInfo
-              key={index}
-              state={state.state}
-              statecode={state.statecode}
-              active={state.active}
-              confirmed={state.confirmed}
-              deaths={state.deaths}
-              recovered={state.recovered}
-              lastupdatedtime={state.lastupdatedtime}
-            />
-          ))}
+                <Dailyinfo obj={casedaily}/>
+
+          <p className="heading">COVID-19 Statewise Status:</p>
+
+          <div className="container1 state-container">
+            {stateData.map((state, index) => (
+              <StateInfo
+                key={index}
+                state={state.state}
+                statecode={state.statecode}
+                active={state.active}
+                confirmed={state.confirmed}
+                deaths={state.deaths}
+                recovered={state.recovered}
+                lastupdatedtime={state.lastupdatedtime}
+              />
+            ))}
           </div>
-
         </div>
       );
   }
