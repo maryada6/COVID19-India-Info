@@ -212,7 +212,7 @@ const Home = () => {
                   <div className="c-view">
                     <span>
                       <strong>{numberWithCommas(totalStates.active)}</strong>
-                      Active Cases
+                       Active Cases
                     </span>
                     <span>
                       <strong>{numberWithCommas(totalStates.confirmed)}</strong>{" "}

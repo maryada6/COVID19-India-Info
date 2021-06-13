@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@300&family=tStin+Ultra+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,7 @@ html {
   font-size: 16px;
   /* overflow: hidden; */
 }
+
 
 body {
   margin: 0;
@@ -19,6 +21,11 @@ body {
 }
 
 ul{list-style-position: inside;}
+
+.api-link{
+  
+  color: inherit; 
+}
 
 header {
   position: sticky;
@@ -35,6 +42,18 @@ nav ul {
   list-style: none;
 }
 
+@keyframes rotating {
+  from{
+      -webkit-transform: rotate(0deg);
+  }
+  to{
+      -webkit-transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation: rotating 1.5s linear infinite;
+}
 
 @keyframes load {
   0% {
@@ -79,7 +98,6 @@ header ul li ,.error-btn{
 
 
 .page{
-  background-color:white;
   min-height: 89vh;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -98,6 +116,7 @@ header ul li ,.error-btn{
 .daily-info{
   margin: 10px;
   padding: 3px;
+  color:black;
 }
 
 .container1{
@@ -110,12 +129,13 @@ header ul li ,.error-btn{
 .c-block {
   font-family: 'Roboto', sans-serif;
   width: 32%;
-  min-height: 35vh;
+  height: 40vh;
   margin-right: 1%;
   background: #e7daf4;
   padding: 15px;
   border-radius: 10px;
   border: 1px solid #C0AADA;
+  color: black;
 }
 
 strong{
@@ -176,6 +196,7 @@ strong{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  color:black;
 }
 
 .state-info,.district-info{
@@ -196,7 +217,6 @@ strong{
 
 .info-get{
   font-weight:bold;
-  background-color: rgb(190, 203, 255);
   min-height: 15vh;
   display: flex;
   justify-content: center;
@@ -235,11 +255,10 @@ strong{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:#C0AADA;
+  
 }
 
 .about-title{
-  background-color: rgb(190, 203, 255);
   padding:5px;
   width: 100%;
   margin: 0px 0 20px 0;
@@ -247,17 +266,16 @@ strong{
   text-align: center;
   font-size: 30px;
   font-weight: 900;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Dancing Script', cursive;
 }
 
 .covid-details{
-  width:95%;
-  margin: 20px 0;
-  background-color: #faf2e5;
+  width:81%;
+  margin: 20px 0; 
 }
 
 .covidimg{
-  width:80%;
+  width:36%;
   height:50vh;
   background-color: #faf2e5;
   object-fit: contain;
@@ -266,13 +284,13 @@ strong{
 
 
 .contact-links {
-  margin: 20px;
+  margin: 35px;
   width: 20%;
   display: flex;
   justify-content:space-around;
   background-color:lightgreen;
   border: 1px solid black;
-  border-radius: 3%;
+  border-radius: 4%;
 }
 
 .contact-links a {
@@ -305,7 +323,7 @@ footer p {
   }
 
   header nav ul li {
-    font-size: 12px;
+    font-size: 17px;
     padding: 2px;
     margin: 3px 5px;
   }
@@ -317,6 +335,7 @@ footer p {
  .c-block{
    width: 80%;
    margin: 10px;
+   height: 45vh;
  }
 
  .district-info {
@@ -345,12 +364,25 @@ footer p {
    font-size: 16px
  }
 
+ .covidimg{
+   width: 80%;
+ }
+
  .daily-info-container{
    flex-direction: column;
    align-items: center;
    width:80%;
    border-radius: 3%;
    margin:10px auto;
+   
+ }
+
+ .contact-icon {
+  font-size: 6vw;
+}
+
+.covid-details{
+  width:95%;
  }
 
 }

@@ -9,6 +9,8 @@ const About = () => {
       <div className="about-title">Covid - 19 India Information Page(Unofficial Page)</div>
       <img className="covidimg" src={window.location.origin + '/covid.jpg'}  alt="" />
       <div className="covid-details">
+        <hr />
+        <br />
       <details>
         <summary>COVID-19 Overview</summary>
         <div className="covid-info">
@@ -36,13 +38,16 @@ const About = () => {
           example, by coughing into a flexed elbow).
         </div>
       </details>
-
+            <br />
+            <hr />
+            <br />
       <details>
         <summary>COVID-19 Prevention</summary>
         <div className="covid-info">
           To prevent infection and to slow transmission of COVID-19, do the
           following:
           <ul className="Prevention" style={{ listStyleType: "disc" }}>
+            <br />
             <li> 
               Wash your hands regularly with soap and water, or clean them with
               alcohol-based hand rub.
@@ -64,19 +69,23 @@ const About = () => {
           </ul>
         </div>
       </details>
-
+            <br />
+            <hr />
+            <br />
       <details>
         <summary>COVID-19 Symptoms</summary>
         <div className="covid-info">
           COVID-19 affects different people in different ways. 
           Most infected people will develop mild to moderate illness and recover without
           hospitalization. 
+          <br />
           Most common symptoms:
           <ul>
            <li>  fever.</li> 
           <li> dry cough. </li>
           <li> tiredness.</li>
            </ul>
+           <br />
           Less common symptoms:
            <ul>
           <li>  aches and pains. </li>
@@ -97,11 +106,14 @@ const About = () => {
           can take up to 14 days.
         </div>
       </details>
+      <br />
+      <hr />
+      <br />
       </div>
     
       <div>
-        Source API used:{" "}
-        <a href="https://api.covid19india.org/">
+        Source API used:{" "} <br />
+        <a className="api-link" href="https://api.covid19india.org/">
           https://api.covid19india.org/
         </a>
       </div>

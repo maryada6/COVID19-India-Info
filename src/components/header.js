@@ -1,21 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-const HeaderPart=()=>{
+import Switch from '../components/switch'
+
+const HeaderPart=(props)=>{
    return( <header>
     <div className="progress"></div>
     <nav>
       <ul>
+      <li><img className="rotate" src={window.location.origin + '/virus.png' } style={{width:'20px'}} alt="" /></li>  
       <Link to="/" style={{ textDecoration: 'none' }} >
       <li>Home</li>
       </Link>
       <Link to="/district"  style={{ textDecoration: 'none' }}>
-      <li>District data</li>
+      <li>States</li>
       </Link>
       
       <Link to="/about" style={{ textDecoration: 'none' }} >
       <li>About</li>
       </Link>
 
+    <li>
+      <Switch themeToggler={props.themetoggler} />
+    </li>
       </ul>
     </nav>
   </header>
