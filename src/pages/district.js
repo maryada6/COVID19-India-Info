@@ -81,9 +81,11 @@ useEffect(()=>{
 
   return (
     <div className="page">
+      
     <form onSubmit={handleSubmit}>
       <div className="info-get">
       <label htmlFor="state">Select a State:</label>
+
 
       <select name="state" id="selectElementID" defaultValue={'Tamil Nadu'} onChange={()=>handleDistrict()} ref={state}>
         <option value="Andaman and Nicobar Islands">
@@ -132,6 +134,12 @@ useEffect(()=>{
       <input id="district" type="text" ref={district}/> */}
       <button type="submit" >Submit</button>
       </div>
+
+      <div className="about-title">Wear masks and wash your hands</div>
+      <div className="center-flex">
+            <img className="covidimg" src={window.location.origin + '/social.png'}  alt="" />
+            </div>
+
       </form>
       {loading?<Loading/>:<DistrictInfo obj={objStates}/>} 
     </div>

@@ -15,7 +15,7 @@ const StateInfo = (props) => {
   return(<>
     <div className="state-info" style={{backgroundColor:getRandomColor()}}  key={index}>
         <div className="state-name">{state +"("+ statecode+")" }</div>
-        <div className="info">Active cases: {numberWithCommas(active) || 'N/A'} </div>
+        <div className="info state-name">Active cases: {numberWithCommas(active) || 'N/A'} </div>
         <div className="info">Confirmed cases: {numberWithCommas(confirmed) || 'N/A'}</div>
         <div className="info">Deceased: {numberWithCommas(deaths) || 'N/A'}</div>
         <div className="info">Recovered cases: {numberWithCommas(recovered)|| 'N/A'}</div>

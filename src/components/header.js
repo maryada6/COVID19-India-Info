@@ -7,12 +7,12 @@ const HeaderPart=(props)=>{
     <div className="progress"></div>
     <nav>
       <ul>
-      <li><img className="rotate" src={window.location.origin + '/virus.png' } style={{width:'20px'}} alt="" /></li>  
+      <li><img className="rotate" src={window.location.origin + '/virus.png' } style={{width:'25px'}} alt="" /></li>  
       <Link to="/" style={{ textDecoration: 'none' }} >
       <li>Home</li>
       </Link>
       <Link to="/district"  style={{ textDecoration: 'none' }}>
-      <li>States</li>
+      <li>Zone</li>
       </Link>
       
       <Link to="/about" style={{ textDecoration: 'none' }} >

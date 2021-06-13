@@ -20,6 +20,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.center-flex{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
 ul{list-style-position: inside;}
 
 .api-link{
@@ -38,8 +44,12 @@ header {
 nav ul {
   width: 100%;
   display: flex;
-  justify-content: right;
   list-style: none;
+}
+
+.switch{
+  position: absolute;
+  right:7px;
 }
 
 @keyframes rotating {
@@ -202,6 +212,7 @@ strong{
 .state-info,.district-info{
   border: 1px solid black ;
   width:30%;
+  height: 173px;;
   padding: 5px;
   margin:5px;
   border-radius: 2%;
@@ -261,7 +272,7 @@ strong{
 .about-title{
   padding:5px;
   width: 100%;
-  margin: 0px 0 20px 0;
+  margin: 10px 0 10px 0;
   text-transform: capitalize;
   text-align: center;
   font-size: 30px;
@@ -276,7 +287,8 @@ strong{
 
 .covidimg{
   width:36%;
-  height:50vh;
+  height:44vh;
+  margin:0 auto;
   background-color: #faf2e5;
   object-fit: contain;
 }
@@ -366,6 +378,8 @@ footer p {
 
  .covidimg{
    width: 80%;
+   margin: 10px 9%;
+   height: auto;
  }
 
  .daily-info-container{

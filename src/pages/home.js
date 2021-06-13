@@ -13,7 +13,7 @@ import Dailyinfo from "../components/dailyInfo";
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
-  const [casedaily,setCaseADaily] = useState({
+  const [casedaily, setCaseADaily] = useState({
     dailyconfirmed: "",
     dailydeceased: "",
     dailyrecovered: "",
@@ -21,8 +21,8 @@ const Home = () => {
     dateymd: "",
     totalconfirmed: "",
     totaldeceased: "",
-    totalrecovered: ""
-    });
+    totalrecovered: "",
+  });
   const [stateData, setStateData] = useState([]);
   const [totaldata1, settotaldata1] = useState({
     dailyrtpcrsamplescollectedicmrapplication: "",
@@ -124,10 +124,11 @@ const Home = () => {
         }
       });
 
-
       caseDateReturn().then(function (result) {
         if (result !== {}) {
-          setCaseADaily(result[Object.keys(result)[Object.keys(result).length - 1]])
+          setCaseADaily(
+            result[Object.keys(result)[Object.keys(result).length - 1]]
+          );
           // console.log( result[Object.keys(result)[Object.keys(result).length - 1]]);
         }
       });
@@ -162,16 +163,32 @@ const Home = () => {
     else
       return (
         <div className="page">
+          <div className="about-title">Maintain social distance</div>
+          <div className="center-flex">
+            <img
+              className="covidimg"
+              src={window.location.origin + "/research.png"}
+              alt=""
+            />
+          </div>
+
           <div className="container1 top">
             <Container
               mssg1="Vaccination Dose"
-              num1={ (totaldata1.totaldosesadministered -
-                totaldata2.totaldosesadministered > 0) ? numberWithCommas(
+              num1={
                 totaldata1.totaldosesadministered -
-                  totaldata2.totaldosesadministered ): 'N/A'
+                  totaldata2.totaldosesadministered >
+                0
+                  ? numberWithCommas(
+                      totaldata1.totaldosesadministered -
+                        totaldata2.totaldosesadministered
+                    )
+                  : "N/A"
               }
               mssg2="Vaccination Doses Day Before"
-              num2={numberWithCommas(totaldata1.totaldosesadministered) || 'N/A'}
+              num2={
+                numberWithCommas(totaldata1.totaldosesadministered) || "N/A"
+              }
               mssg3="Total Vaccination Doses"
             />
 
@@ -179,26 +196,30 @@ const Home = () => {
               <div className="c-view">
                 <span>
                   <strong>
-                    { numberWithCommas(
-                      totaldata1.dailyrtpcrsamplescollectedicmrapplication)||"N/A"}
+                    {numberWithCommas(
+                      totaldata1.dailyrtpcrsamplescollectedicmrapplication
+                    ) || "N/A"}
                   </strong>{" "}
                   Daily RT-PCR samples collected
                 </span>
                 <span>
                   <strong>
-                    {numberWithCommas(totaldata1.firstdoseadministered) || 'N/A'}
+                    {numberWithCommas(totaldata1.firstdoseadministered) ||
+                      "N/A"}
                   </strong>
                   First dose administered
                 </span>
                 <span>
                   <strong>
-                    {numberWithCommas(totaldata1.seconddoseadministered) || 'N/A'}
+                    {numberWithCommas(totaldata1.seconddoseadministered) ||
+                      "N/A"}
                   </strong>
                   Second dose administered
                 </span>
                 <span>
                   <strong>
-                    {numberWithCommas(totaldata1.totalindividualsvaccinated) || 'N/A'}
+                    {numberWithCommas(totaldata1.totalindividualsvaccinated) ||
+                      "N/A"}
                   </strong>
                   Total individuals vaccinated
                 </span>
@@ -212,7 +233,7 @@ const Home = () => {
                   <div className="c-view">
                     <span>
                       <strong>{numberWithCommas(totalStates.active)}</strong>
-                       Active Cases
+                      Active Cases
                     </span>
                     <span>
                       <strong>{numberWithCommas(totalStates.confirmed)}</strong>{" "}
@@ -231,7 +252,7 @@ const Home = () => {
               ))}
           </div>
 
-                <Dailyinfo obj={casedaily}/>
+          <Dailyinfo obj={casedaily} />
 
           <p className="heading">COVID-19 Statewise Status:</p>
 

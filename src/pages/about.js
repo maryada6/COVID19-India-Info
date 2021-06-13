@@ -6,8 +6,8 @@ const About = () => {
   return (
     <div className="page">
     <div className="about-container">
-      <div className="about-title">Covid - 19 India Information Page(Unofficial Page)</div>
-      <img className="covidimg" src={window.location.origin + '/covid.jpg'}  alt="" />
+      <div className="about-title">Covid - 19 India Tracker(Unofficial Page)</div>
+      <img className="covidimg" src={window.location.origin + '/medical-info.png'}  alt="" />
       <div className="covid-details">
         <hr />
         <br />
@@ -110,7 +110,6 @@ const About = () => {
       <hr />
       <br />
       </div>
-    
       <div>
         Source API used:{" "} <br />
         <a className="api-link" href="https://api.covid19india.org/">
