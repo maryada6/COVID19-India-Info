@@ -212,7 +212,7 @@ strong{
 .state-info,.district-info{
   border: 1px solid black ;
   width:30%;
-  height: 173px;;
+  height: 163px;
   padding: 5px;
   margin:5px;
   border-radius: 2%;
@@ -231,7 +231,9 @@ strong{
   min-height: 15vh;
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  border: 2px solid #20da57;
+  padding: 2px;
 }
 
 .info-get label,button{
@@ -241,7 +243,7 @@ strong{
 
 .info-get select{
   font-family: 'Roboto', sans-serif;
-  min-width:247px;
+  min-width: 244px;
   border: 1px solid rgb(190, 203, 255);
 }
 
@@ -315,6 +317,11 @@ strong{
 }
 
 
+.errorimg{
+  height:80vh;
+  margin:7vh 0;
+}
+
 footer {
   background-color: grey;
   position: fixed;
@@ -361,7 +368,7 @@ footer p {
 
  .info-get label,select{
    display: block;
-   width: 55vh;
+   width: 50vh;
    margin: 0 auto;
  }
 
@@ -398,5 +405,10 @@ footer p {
 .covid-details{
   width:95%;
  }
+
+ .errorimg {
+  height: 38vh;
+  margin: 23vh 2vw;
+}
 
 }

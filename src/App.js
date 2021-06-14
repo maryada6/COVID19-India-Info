@@ -38,9 +38,7 @@ function App() {
         <Route path="/About">
           <About />
         </Route>
-        <Route path="/*">
-          <Error />
-        </Route>
+        <Route component={Error} />
       </Switch>
       </StyledApp>
       <FooterPart/>
