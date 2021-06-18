@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@300&family=tStin+Ultra+Condensed&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@300&family=tStin+Ultra+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,27 +10,27 @@ html {
   /* overflow: hidden; */
 }
 
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.center-flex{
-display: flex;
-justify-content: center;
-align-items: center;
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-ul{list-style-position: inside;}
+ul {
+  list-style-position: inside;
+}
 
-.api-link{
-  
-  color: inherit; 
+.api-link {
+  color: inherit;
 }
 
 header {
@@ -40,24 +40,23 @@ header {
   top: 0;
 }
 
-
 nav ul {
   width: 100%;
   display: flex;
   list-style: none;
 }
 
-.switch{
+.switch {
   position: absolute;
-  right:7px;
+  right: 7px;
 }
 
 @keyframes rotating {
-  from{
-      -webkit-transform: rotate(0deg);
+  from {
+    -webkit-transform: rotate(0deg);
   }
-  to{
-      -webkit-transform: rotate(360deg);
+  to {
+    -webkit-transform: rotate(360deg);
   }
 }
 
@@ -81,55 +80,51 @@ nav ul {
   height: 3px;
   display: block;
   background-color: red;
-  animation: load 1s ease-in  1;
+  animation: load 1s ease-in 1;
 }
 
-
-
-header ul li ,.error-btn{
+header ul li,
+.error-btn {
   color: white;
   padding: 0px 5px;
   margin: 5px 20px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 25px;
   font-weight: 600;
   list-style-type: none;
   text-align: center;
 }
 
-.error-container{
+.error-container {
   height: 90vh;
 }
 
-.error-btn{
+.error-btn {
   color: black;
 }
 
-
-
-.page{
+.page {
   min-height: 89vh;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
-.daily-info-container
-{
-   background-color: rgb(188, 255, 187);
-   display: flex;
-   font-family: 'Roboto', sans-serif;
-   font-weight: bold;
-   padding:7px 5px;
-   justify-content: center;
-   overflow: hidden;
+.daily-info-container {
+  background-color: rgb(188, 255, 187);
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  padding: 7px 5px;
+  justify-content: center;
+  overflow: hidden;
 }
-.daily-info{
+.daily-info {
   margin: 10px;
   padding: 3px;
-  color:black;
+  color: black;
 }
 
-.container1{
+.container1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,29 +132,33 @@ header ul li ,.error-btn{
 }
 
 .c-block {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   width: 32%;
   height: 40vh;
   margin-right: 1%;
   background: #e7daf4;
   padding: 15px;
   border-radius: 10px;
-  border: 1px solid #C0AADA;
+  border: 1px solid #c0aada;
   color: black;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-strong{
+strong {
   margin: 0 5px;
   font-weight: bold;
 }
 
-.c-block span{
+.c-block span {
   margin: 10px;
   display: -webkit-box;
 }
 
 .c-view {
- 
   display: -ms-flexbox;
   display: flex;
   min-height: 90px;
@@ -174,60 +173,77 @@ strong{
 .c-title {
   text-transform: uppercase;
   box-sizing: border-box;
-  
 }
 
 .yday-vcount {
   margin: 20px auto;
-  background: #EEE1FD;
-  border: 1px solid #6724C7;
+  background: #eee1fd;
+  border: 1px solid #6724c7;
   border-radius: 4px;
   padding: 10px;
   text-align: center;
 }
 
-.imp-info{
+.imp-info {
   background-color: #faf2e5;
 }
 
-.total-info{
-  background-color: #EDFAFF;
+.total-info {
+  background-color: #edfaff;
 }
 
-.heading{
-  font-family: 'Roboto', sans-serif;
+.heading {
+  font-family: "Roboto", sans-serif;
   text-align: center;
   font-weight: 900;
   font-size: 25px;
   margin: 20px;
 }
 
-.state-container,.district-container{
+.state-container,
+.district-container {
+  display: flex;
+  flex-direction:row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
-  color:black;
+  color: black;
 }
 
-.state-info,.district-info{
-  border: 1px solid black ;
-  width:30%;
+.state-info,
+.district-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 30%;
   height: 163px;
-  padding: 5px;
-  margin:5px;
-  border-radius: 2%;
+  padding: 7px;
+  margin: 10px;
+  border-radius: 10px;
   text-align: center;
   font-weight: 500;
+  box-shadow: 0 8px 5px 0 rgba(31, 38, 135, 0.37);
   
 }
 
-.state-name,.district-name{
-  overflow-wrap: break-word;
-  font-weight:700;
+.state-info:hover,.district-info:hover{
+  cursor: pointer;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  
 }
 
-.info-get{
-  font-weight:bold;
+.state-name,
+.district-name {
+  overflow-wrap: break-word;
+  font-weight: 700;
+}
+
+.info-get {
+  font-weight: bold;
   min-height: 15vh;
   display: flex;
   justify-content: center;
@@ -236,73 +252,71 @@ strong{
   padding: 2px;
 }
 
-.info-get label,button{
+.info-get label,
+button {
   padding: 0 20px;
   margin: 5px;
 }
 
-.info-get select{
-  font-family: 'Roboto', sans-serif;
+.info-get select {
+  font-family: "Roboto", sans-serif;
   min-width: 244px;
   border: 1px solid rgb(190, 203, 255);
 }
 
-.info-get button{
+.info-get button {
   background-color: lightgreen;
   font-weight: bold;
   text-align: center;
-  padding:2px 10px;
+  padding: 2px 10px;
   border: 1px solid green;
   border-radius: 2%;
 }
 
-.covid-info{
+.covid-info {
   text-align: justify;
   margin: 5px;
   font-weight: bold;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-.about-container{
+.about-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
-.about-title{
-  padding:5px;
+.about-title {
+  padding: 5px;
   width: 100%;
   margin: 10px 0 10px 0;
   text-transform: capitalize;
   text-align: center;
   font-size: 30px;
   font-weight: 900;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
 }
 
-.covid-details{
-  width:81%;
-  margin: 20px 0; 
+.covid-details {
+  width: 81%;
+  margin: 20px 0;
 }
 
-.covidimg{
-  width:36%;
-  height:44vh;
-  margin:0 auto;
+.covidimg {
+  width: 36%;
+  height: 44vh;
+  margin: 0 auto;
   background-color: #faf2e5;
   object-fit: contain;
 }
-
-
 
 .contact-links {
   margin: 35px;
   width: 20%;
   display: flex;
-  justify-content:space-around;
-  background-color:lightgreen;
+  justify-content: space-around;
+  background-color: lightgreen;
   border: 1px solid black;
   border-radius: 4%;
 }
@@ -316,10 +330,9 @@ strong{
   font-size: 3vw;
 }
 
-
-.errorimg{
-  height:80vh;
-  margin:7vh 0;
+.errorimg {
+  height: 80vh;
+  margin: 7vh 0;
 }
 
 footer {
@@ -336,9 +349,14 @@ footer p {
   color: black;
 }
 
-@media only screen and (max-width: 600px){
+
+img:hover {
+  transform: scaleX(-1);
+}
+
+@media only screen and (max-width: 600px) {
   header {
-    background-color:#2c498d;
+    background-color: #2c498d;
   }
 
   header nav ul li {
@@ -347,68 +365,75 @@ footer p {
     margin: 3px 5px;
   }
 
- .top{
-   flex-direction: column;
- }
+  .top {
+    flex-direction: column;
+  }
 
- .c-block{
-   width: 80%;
-   margin: 10px;
-   height: 45vh;
- }
+  .c-block {
+    width: 80%;
+    margin: 10px;
+    height: 45vh;
+  }
 
- .district-info {
-   width:43%;
-   margin:2px;
- }
+  .district-info {
+    width: 38%;
+    margin: 8px;
+    box-shadow: 0 8px 5px 0 rgba(31, 38, 135, 0.37);
+  }
 
- .info-get{
-   flex-direction: column;
- }
+  .info-get {
+    flex-direction: column;
+  }
 
- .info-get label,select{
-   display: block;
-   width: 50vh;
-   margin: 0 auto;
- }
+  .info-get label,
+  select {
+    display: block;
+    width: 50vh;
+    margin: 0 auto;
+  }
 
- .info-get button{
-  min-width:267px;
- }
+  .info-get button {
+    min-width: 267px;
+  }
 
- .state-info{
-   width:80%;
- }
- .about-title{
-   font-size: 16px
- }
+  .state-info {
+    width: 80%;
+    box-shadow: 0 8px 5px 0 rgba(31, 38, 135, 0.37);
+  }
+  .about-title {
+    font-size: 16px;
+  }
 
- .covidimg{
-   width: 80%;
-   margin: 10px 9%;
-   height: auto;
- }
+  .covidimg {
+    width: 80%;
+    margin: 10px 9%;
+    height: auto;
+    border-radius: 8px;
+  }
 
- .daily-info-container{
-   flex-direction: column;
-   align-items: center;
-   width:80%;
-   border-radius: 3%;
-   margin:10px auto;
-   
- }
+  .daily-info-container {
+    
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 10px auto;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
 
- .contact-icon {
-  font-size: 6vw;
-}
+  .contact-icon {
+    font-size: 6vw;
+  }
 
-.covid-details{
-  width:95%;
- }
+  .covid-details {
+    width: 95%;
+  }
 
- .errorimg {
-  height: 38vh;
-  margin: 23vh 2vw;
-}
-
+  .errorimg {
+    height: 38vh;
+    margin: 23vh 2vw;
+  }
 }

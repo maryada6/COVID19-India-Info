@@ -13,7 +13,7 @@ import styled,{ThemeProvider} from 'styled-components'
 const StyledApp=styled.div``;
 
 function App() {
-  const [theme,setTheme]=useState("dark");
+  const [theme,setTheme]=useState("light");
 
   const themetoggler=()=>{
     if(theme==='light')
