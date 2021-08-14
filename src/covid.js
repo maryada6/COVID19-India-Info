@@ -1,4 +1,5 @@
-const fetch= require('node-fetch')
+import {stateWiseDummy,totalData} from "./dummy"
+// const fetch= require('node-fetch')
 
 function cisEquals(a, b) {
     return typeof a === 'string' && typeof b === 'string'
@@ -9,28 +10,26 @@ function cisEquals(a, b) {
 
 
 async function  dataReturn(value){
-	const dataReturn=[];
-	await fetch('https://api.covid19india.org/data.json')
-	.then(response => response.json())
-	.then(data => {
-		dataReturn.push(data);
-	});
-
-	return dataReturn[0][value];
+	// const dataReturn=[];
+	// await fetch('https://api.covid19india.org/data.json')
+	// .then(response => response.json())
+	// .then(data => {
+	// 	dataReturn.push(data);
+	// });
+	return totalData[0][value];
 
 }
 
 
 async function  dataReturnDistrict(state){
 	
-	const dataReturn=[];
-	await fetch('https://api.covid19india.org/state_district_wise.json')
-	.then(response => response.json())
-	.then(data => {
-		dataReturn.push(data);
-	});
-
-	return ( state?dataReturn[0][state]:dataReturn[0]);
+	// let dataReturn=[];
+	// await fetch('https://api.covid19india.org/state_district_wise.json')
+	// .then(response => response.json())
+	// .then(data => {
+	// 	dataReturn.push(data);
+	// });
+	return state?stateWiseDummy[0][state]:stateWiseDummy[0];
 
 }
 
@@ -79,7 +78,7 @@ async function totalTested(date){
 }
 
 function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x?x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","):"NA";
 }
 
 // totalTested("5/6/2021")  //used

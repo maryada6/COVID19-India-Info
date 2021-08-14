@@ -135,7 +135,7 @@ useEffect(()=>{
       <button type="submit" >Submit</button>
       </div>
 
-      <div className="about-title">Wear masks and wash your hands</div>
+      <div className="about-title">Wear masks and wash your hands(Dummy data Shown)</div>
       <div className="center-flex">
             <img className="covidimg" src={window.location.origin + '/social.png'}  alt="" />
             </div>

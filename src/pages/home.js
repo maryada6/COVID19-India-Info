@@ -163,7 +163,7 @@ const Home = () => {
     else
       return (
         <div className="page">
-          <div className="about-title">Maintain social distance</div>
+          <div className="about-title">Maintain social distance(Dummy data Shown)</div>
           <div className="center-flex">
             <img
               className="covidimg"
